@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge DB</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #6b6b6b;
+            --accent: #2563eb;
+            --bg: #fafafa;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.03em;
+            margin: 0;
+        }
+
+        nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .search input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .category {
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .category h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .category p {
+            color: var(--secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                margin-top: 1rem;
+            }
+            
+            nav a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Knowledge Database</h1>
+        <nav>
+            <a href="#">Python</a>
+            <a href="#">Database</a>
+            <a href="#">Libraries</a>
+            <a href="#">Tools</a>
+        </nav>
+    </header>
+
+    <div class="search">
+        <input type="text" placeholder="Search knowledge...">
+    </div>
+
+    <div class="categories">
+        <div class="category">
+            <h2>Python Core</h2>
+            <p>Основные концепции, структуры данных, функции и классы</p>
+        </div>
+        <div class="category">
+            <h2>Database</h2>
+            <p>SQL, ORM, миграции, оптимизация запросов</p>
+        </div>
+        <div class="category">
+            <h2>Web Frameworks</h2>
+            <p>Django, FastAPI, Flask и сопутствующие технологии</p>
+        </div>
+        <div class="category">
+            <h2>Data Science</h2>
+            <p>Pandas, NumPy, Matplotlib и анализ данных</p>
+        </div>
+        <div class="category">
+            <h2>DevOps</h2>
+            <p>Docker, CI/CD, развертывание и мониторинг</p>
+        </div>
+        <div class="category">
+            <h2>Best Practices</h2>
+            <p>Паттерны, архитектура, код-стайл и документация</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Knowledge Database © 2023 | Built with Python</p>
+    </footer>
+</body>
+</html>
