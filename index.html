@@ -169,30 +169,12 @@
     </div>
 
     <div class="categories">
-        <div class="category">
-            <h2>Python Core</h2>
-            <p>Основные концепции, структуры данных, функции и классы</p>
-        </div>
-        <div class="category">
-            <h2>Database</h2>
-            <p>SQL, ORM, миграции, оптимизация запросов</p>
-        </div>
-        <div class="category">
-            <h2>Web Frameworks</h2>
-            <p>Django, FastAPI, Flask и сопутствующие технологии</p>
-        </div>
-        <div class="category">
-            <h2>Data Science</h2>
-            <p>Pandas, NumPy, Matplotlib и анализ данных</p>
-        </div>
-        <div class="category">
-            <h2>DevOps</h2>
-            <p>Docker, CI/CD, развертывание и мониторинг</p>
-        </div>
-        <div class="category">
-            <h2>Best Practices</h2>
-            <p>Паттерны, архитектура, код-стайл и документация</p>
-        </div>
+        {% for entry in entries %}
+            <div class="category">
+                <h2>{{ entry.category }}</h2>
+                <p>{{ entry.title }}</p>
+            </div>
+        {% endfor %}
     </div>
 
     <footer>
